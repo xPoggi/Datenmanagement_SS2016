@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at Tue Mar 29 10:19:40 CEST 2016 -->
+<Aufgabe1>
+    <Kunde_Create>
+        <kunde>
+            <kundenNr>8678</kundenNr>
+            <vorname>Peter</vorname>
+            <nachname>Pan</nachname>
+            <straße>Nimmerlandsweg</straße>
+            <hausNr>1</hausNr>
+            <ort>Nimmerland</ort>
+            <plz>256487</plz>
+            <email>Peter@pan.de</email>
+        </kunde>
+    </Kunde_Create>
+    <Album_Create>
+        <album>
+            <albumID>1</albumID>
+            <name>Dl3ter</name>
+            <datum>28.5.2017</datum>
+            <cover></cover>
+            <pfad>/mnt/Dl3ter</pfad>
+            <preis>4444,43</preis>
+            <künstlerID>1337</künstlerID>
+        </album>
+    </Album_Create>
+    <Titel_Create>
+        <titel>
+            <titelID>3</titelID>
+            <name>Dieters Marstrip</name>
+            <preis>5000</preis>
+            <pfad>/mnt/Dl3ter</pfad>
+            <laenge>8000</laenge>
+            <kuenstlerID>1337</kuenstlerID>
+        </titel>
+    </Titel_Create>
+    <Kuenstler_Create>
+        <kuenstler>
+            <kuenstlerID>5556</kuenstlerID>
+            <name>PeterPansBigGranny</name>
+            <biographie>"Der folgende Text ist in Omasprache geschrieben :D" wirgtb jkwem flqwdmfwge othnotuhn weriog om</biographie>
+            <herkunft>Oma vom Mars</herkunft>
+        </kuenstler>
+    </Kuenstler_Create>
+    <Music_Purchase>
+        <kuenstler>
+            <kuenstlerID>1337</kuenstlerID>
+            <name>PeterPansBigDaddy</name>
+            <biographie>"Der folgende Text ist in Dietersprache geschrieben :D" ösaldkf asödlkfj aösdlkfj asödlkfj aösldkfj aösldkj</biographie>
+            <herkunft>Junge vom Mars</herkunft>
+        </kuenstler>
+        <einkauf>
+            <bestellNr>11</bestellNr>
+            <titelID>1</titelID>
+            <album></album>
+            <zahlung>false</zahlung>
+            <kundenNr>8678</kundenNr>
+        </einkauf>
+    </Music_Purchase>
+</Aufgabe1>
