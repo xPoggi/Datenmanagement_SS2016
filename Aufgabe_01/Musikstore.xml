@@ -1,61 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- New document created with EditiX at Tue Mar 29 10:19:40 CEST 2016 -->
-<Aufgabe1>
-    <Kunde_Create>
-        <kunde>
-            <kundenNr>8678</kundenNr>
-            <vorname>Peter</vorname>
-            <nachname>Pan</nachname>
-            <straße>Nimmerlandsweg</straße>
-            <hausNr>1</hausNr>
-            <ort>Nimmerland</ort>
-            <plz>256487</plz>
-            <email>Peter@pan.de</email>
-        </kunde>
-    </Kunde_Create>
-    <Album_Create>
-        <album>
-            <albumID>1</albumID>
-            <name>Dl3ter</name>
-            <datum>28.5.2017</datum>
-            <cover></cover>
-            <pfad>/mnt/Dl3ter</pfad>
-            <preis>4444,43</preis>
-            <künstlerID>1337</künstlerID>
-        </album>
-    </Album_Create>
-    <Titel_Create>
-        <titel>
-            <titelID>3</titelID>
-            <name>Dieters Marstrip</name>
-            <preis>5000</preis>
-            <pfad>/mnt/Dl3ter</pfad>
-            <laenge>8000</laenge>
-            <kuenstlerID>1337</kuenstlerID>
-        </titel>
-    </Titel_Create>
-    <Kuenstler_Create>
-        <kuenstler>
-            <kuenstlerID>5556</kuenstlerID>
-            <name>PeterPansBigGranny</name>
-            <biographie>"Der folgende Text ist in Omasprache geschrieben :D" wirgtb jkwem flqwdmfwge othnotuhn weriog om</biographie>
-            <herkunft>Oma vom Mars</herkunft>
-        </kuenstler>
-    </Kuenstler_Create>
-    <Music_Purchase>
-        <kuenstler>
-            <kuenstlerID>1337</kuenstlerID>
-            <name>PeterPansBigDaddy</name>
-            <biographie>"Der folgende Text ist in Dietersprache geschrieben :D" ösaldkf asödlkfj aösdlkfj asödlkfj aösldkfj aösldkj</biographie>
-            <herkunft>Junge vom Mars</herkunft>
-        </kuenstler>
-        <einkauf>
-            <bestellNr>11</bestellNr>
-            <titelID>1</titelID>
-            <album></album>
-            <zahlung>false</zahlung>
-            <kundenNr>8678</kundenNr>
-        </einkauf>
-    </Music_Purchase>
-</Aufgabe1>
+<kunde kundenNr="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./example.xsd">
+    <vorname>Peter</vorname>
+    <nachname>Pan</nachname>
+    <straße>Nimmerlandsweg</straße>
+    <hausNr>1</hausNr>
+    <ort>Nimmerland</ort>
+    <plz>256487</plz>
+    <email>Peter@pan.de</email>
+</kunde>
+
+<kuenstler kuenstlerID="222" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./example.xsd">
+        <name>Captain Hook</name>
+        <biographie>Captain Hook ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Peter Pan.</biographie>
+        <herkunft>Neverland</herkunft>
+</kuenstler>
+
+<titel titelID="77" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./example.xsd">
+    <name>Tinker Bell</name>
+    <preis>1.99</preis>
+    <pfad>/mnt/Captain_Hook/77_Tinker_Bell.mp3</pfad>
+    <laenge>185</laenge>
+    <kuenstlerID>222</kuenstlerID>
+</titel>
