@@ -1,90 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- New XSD document created with EditiX XML Editor (http://www.editix.com) at Wed Mar 30 11:21:17 CEST 2016 -->
-
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">Created with EditiX (http://www.editix.com) at Wed Mar 30 11:21:46 CEST 2016</xs:documentation>
-	</xs:annotation>
-	<xs:complextype name="kunde" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="vorname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="nachname" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="straße" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="hausNr" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="ort" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="plz" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="email" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="kundenNr" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="bewertung" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="bewertung" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="datum" type="xs:date" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:choice xmlns:xs="http://www.w3.org/2001/XMLSchema">
-				<xs:element name="titelID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-				<xs:element name="albumID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-				<xs:element name="kuenstlerID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			</xs:choice>
-			<xs:element name="kundenNr" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="bewertungID" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="kuenstler" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="biographie" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="herkunft" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="kuenstlerID" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="album" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="datum" type="xs:date" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="cover" type="xs:anytype" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="pfad" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="preis" type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="kuenstlerID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="albumID" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="titel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="name" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="preis" type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="pfad" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="laenge" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="kuenstlerID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="titelID" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="titel_hat_genre" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:attribute name="titelID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		<xs:attribute name="genre" type="xs:token" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="genre" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:attribute name="genre" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="titel_in_playlist" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:attribute name="titelID" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		<xs:attribute name="playlistNr" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="playlist" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="kommentar" type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="kundenNr" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="playlistNr" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
-	<xs:complextype name="einkauf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:sequence xmlns:xs="http://www.w3.org/2001/XMLSchema">
-			<xs:element name="titelId" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="albumId" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="zahlung" type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-			<xs:element name="kundenNr" type="xs:IDREF" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-		</xs:sequence>
-		<xs:attribute name="bestellNr" type="xs:integer" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
-	</xs:complextype>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complextype name="kunde">
+        <xs:sequence>
+            <xs:element name="vorname" type="xs:string"/>
+            <xs:element name="nachname" type="xs:string"/>
+            <xs:element name="straße" type="xs:string"/>
+            <xs:element name="hausNr" type="xs:integer"/>
+            <xs:element name="ort" type="xs:string"/>
+            <xs:element name="plz" type="xs:integer"/>
+            <xs:element name="email" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="kundenNr" type="xs:integer"/>
+    </xs:complextype>
+    <xs:complextype name="bewertung">
+        <xs:sequence>
+            <xs:element name="bewertung" type="xs:string"/>
+            <xs:element name="datum" type="xs:date"/>
+            <xs:choice>
+                <xs:element name="titelID" type="xs:IDREF"/>
+                <xs:element name="albumID" type="xs:IDREF"/>
+                <xs:element name="kuenstlerID" type="xs:IDREF"/>
+            </xs:choice>
+            <xs:element name="kundenNr" type="xs:IDREF"/>
+        </xs:sequence>
+        <xs:attribute name="bewertungID" type="xs:integer"/>
+    </xs:complextype>
+    <xs:complextype name="kuenstler">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="biographie" type="xs:string"/>
+            <xs:element name="herkunft" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="kuenstlerID" type="xs:integer"/>
+    </xs:complextype>
+    <xs:complextype name="album">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="datum" type="xs:date"/>
+            <xs:element name="cover" type="xs:anytype"/>
+            <xs:element name="pfad" type="xs:string"/>
+            <xs:element name="preis" type="xs:double"/>
+            <xs:element name="kuenstlerID" type="xs:IDREF"/>
+        </xs:sequence>
+        <xs:attribute name="albumID" type="xs:integer"/>
+    </xs:complextype>
+    <xs:complextype name="titel">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="preis" type="xs:double"/>
+            <xs:element name="pfad" type="xs:string"/>
+            <xs:element name="laenge" type="xs:string"/>
+            <xs:element name="kuenstlerID" type="xs:IDREF"/>
+        </xs:sequence>
+        <xs:attribute name="titelID" type="xs:integer"/>
+    </xs:complextype>
+    <xs:complextype name="titel_hat_genre">
+        <xs:attribute name="titelID" type="xs:IDREF"/>
+        <xs:attribute name="genre" type="xs:token"/>
+    </xs:complextype>
+    <xs:complextype name="genre">
+        <xs:attribute name="genre" type="xs:string"/>
+    </xs:complextype>
+    <xs:complextype name="titel_in_playlist">
+        <xs:attribute name="titelID" type="xs:IDREF"/>
+        <xs:attribute name="playlistNr" type="xs:IDREF"/>
+    </xs:complextype>
+    <xs:complextype name="playlist">
+        <xs:sequence>
+            <xs:element name="kommentar" type="xs:string"/>
+            <xs:element name="kundenNr" type="xs:IDREF"/>
+        </xs:sequence>
+        <xs:attribute name="playlistNr" type="xs:integer"/>
+    </xs:complextype>
+    <xs:complextype name="einkauf">
+        <xs:sequence>
+            <xs:element name="titelId" type="xs:IDREF"/>
+            <xs:element name="albumId" type="xs:IDREF"/>
+            <xs:element name="zahlung" type="xs:boolean"/>
+            <xs:element name="kundenNr" type="xs:IDREF"/>
+        </xs:sequence>
+        <xs:attribute name="bestellNr" type="xs:integer"/>
+    </xs:complextype>
 </xs:schema>
