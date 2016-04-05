@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<kunde kundenNr="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./example.xsd">
+<kunde kundenNr="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Musikstore.xsd">
     <vorname>Peter</vorname>
     <nachname>Pan</nachname>
     <straße>Nimmerlandsweg</straße>
@@ -10,13 +10,13 @@
     <email>Peter@pan.de</email>
 </kunde>
 
-<kuenstler kuenstlerID="222" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./example.xsd">
+<kuenstler kuenstlerID="222" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Musikstore.xsd">
         <name>Captain Hook</name>
         <biographie>Captain Hook ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Peter Pan.</biographie>
         <herkunft>Neverland</herkunft>
 </kuenstler>
 
-<titel titelID="77" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./example.xsd">
+<titel titelID="77" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Musikstore.xsd">
     <name>Tinker Bell</name>
     <preis>1.99</preis>
     <pfad>/mnt/Captain_Hook/77_Tinker_Bell.mp3</pfad>
