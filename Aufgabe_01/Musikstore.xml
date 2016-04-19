@@ -1,25 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<kunde kundenNr="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Musikstore.xsd">
-    <vorname>Peter</vorname>
-    <nachname>Pan</nachname>
-    <straße>Nimmerlandsweg</straße>
-    <hausNr>1</hausNr>
-    <ort>Nimmerland</ort>
-    <plz>256487</plz>
-    <email>Peter@pan.de</email>
-</kunde>
-
-<kuenstler kuenstlerID="222" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Musikstore.xsd">
-        <name>Captain Hook</name>
-        <biographie>Captain Hook ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Peter Pan.</biographie>
-        <herkunft>Neverland</herkunft>
-</kuenstler>
-
-<titel titelID="77" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./Musikstore.xsd">
-    <name>Tinker Bell</name>
-    <preis>1.99</preis>
-    <pfad>/mnt/Captain_Hook/77_Tinker_Bell.mp3</pfad>
-    <laenge>185</laenge>
-    <kuenstlerID>222</kuenstlerID>
-</titel>
+<Musikstore xsi:noNamespaceSchemaLocation="./Musikstore.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<kunde kundenNr="b16">
+		<vorname>Wendy</vorname>
+		<nachname>Darling</nachname>
+		<straße>Nimmerlandsweg</straße>
+		<hausNr>1</hausNr>
+		<ort>Nimmerland</ort>
+		<plz>256487</plz>
+		<email>wendydarling@trashmail.de</email>
+	</kunde>
+	<kunde kundenNr="c16">
+		<vorname>Michael</vorname>
+		<nachname>Darling</nachname>
+		<straße>Nimmerlandsweg</straße>
+		<hausNr>1</hausNr>
+		<ort>Nimmerland</ort>
+		<plz>256487</plz>
+		<email>xXmichealXxmlgpro360noscopebiatch@yahoo.de</email>
+	</kunde>
+	<kuenstler kuenstlerID="c222">
+		<name>Mr. Smee</name>
+		<biographie>Mr. Smee ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der boatswain von Captain Hook.</biographie>
+		<herkunft>Neverland</herkunft>
+	</kuenstler>
+	<kuenstler kuenstlerID="b222">
+		<name>Das Krokodil das Hooks Hand aß</name>
+		<biographie>Das Krokodil ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Captain Hook.</biographie>
+		<herkunft>Neverland</herkunft>
+	</kuenstler>
+	<kuenstler kuenstlerID="a222">
+		<name>Captain Hook</name>
+		<biographie>Captain Hook ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Peter Pan.</biographie>
+		<herkunft>Neverland</herkunft>
+	</kuenstler>
+	<titel titelID="c77">
+		<name>DrDrDrop the soap</name>
+		<preis>1.99</preis>
+		<pfad>/mnt/Mr_Smee/c77_DrDrDrop_the_soap.mp3</pfad>
+		<laenge>240</laenge>
+		<kuenstlerID>c222</kuenstlerID>
+	</titel>
+	<titel titelID="b77">
+		<name>Piraten sind lecker</name>
+		<preis>1.99</preis>
+		<pfad>/mnt/Das_Krokodil/b77_Piraten_sind_lecker.mp3</pfad>
+		<laenge>175</laenge>
+		<kuenstlerID>b222</kuenstlerID>
+	</titel>
+	<titel titelID="a77">
+		<name>Tinker Bell</name>
+		<preis>1.99</preis>
+		<pfad>/mnt/Captain_Hook/Tinker_Bell_EP/a77_Tinker_Bell.mp3</pfad>
+		<laenge>185</laenge>
+		<kuenstlerID>a222</kuenstlerID>
+	</titel>
+	<titel_hat_genre genre="Metalcore" titelID="a222"></titel_hat_genre>
+	<titel_hat_genre genre="Classic" titelID="b222"></titel_hat_genre>
+	<titel_hat_genre genre="Trap" titelID="c222"></titel_hat_genre>
+	<genre genre="Trap"></genre>
+	<genre genre="Classic"></genre>
+	<genre genre="Metalcore"></genre>
+	<album albumID="a8">
+		<name>Tinker Bell EP</name>
+		<datum>2016-03-29</datum>
+		<cover></cover>
+		<pfad>/mnt/Captain_Hook/Tinker_Bell_EP</pfad>
+		<preis>2.99</preis>
+		<kuenstlerID>a222</kuenstlerID>
+	</album>
+	<album albumID="b8">
+		<name>Krok Mashup</name>
+		<datum>2016-03-23</datum>
+		<cover></cover>
+		<pfad>/mnt/Das_Krokodil/Krok_Mashup_2016</pfad>
+		<preis>9.99</preis>
+		<kuenstlerID>b222</kuenstlerID>
+	</album>
+	<album albumID="c8">
+		<name>Boatsgarn</name>
+		<datum>2016-03-24</datum>
+		<cover></cover>
+		<pfad>/mnt/Mr_Smee/Boatsgarn</pfad>
+		<preis>13.99</preis>
+		<kuenstlerID>c222</kuenstlerID>
+	</album>
+	<album_hat_titel albumID="a8">
+		<titelID>a222</titelID>
+	</album_hat_titel>
+	<album_hat_titel albumID="b8">
+		<titelID>b222</titelID>
+	</album_hat_titel>
+	<album_hat_titel albumID="c8">
+		<titelID>c222</titelID>
+	</album_hat_titel>
+	<playlist playlistNr="a2">
+		<kundenNr>c16</kundenNr>
+	</playlist>
+	<playlist playlistNr="b2">
+		<kommentar>AWESOME MIX Vol.1</kommentar>
+		<kundenNr>b16</kundenNr>
+	</playlist>
+	<playlist playlistNr="c2">
+		<kundenNr>a16</kundenNr>
+	</playlist>
+	<titel_in_playlist playlistNr="a2">
+		<titelID>a222</titelID>
+		<titelID>b222</titelID>
+		<titelID>c222</titelID>
+	</titel_in_playlist>
+	<titel_in_playlist playlistNr="b2">
+		<titelID>a222</titelID>
+		<titelID>c222</titelID>
+	</titel_in_playlist>
+	<titel_in_playlist playlistNr="c2">
+		<titelID>a222</titelID>
+		<titelID>b222</titelID>
+	</titel_in_playlist>
+	<bewertung bewertungID="a9">
+		<bewertung>Man hört nichts. Im ernst, wer hielt es für eine gute Idee ein Krokodil singen zu lassen!</bewertung>
+		<datum>2016-04-11</datum>
+		<kuenstlerID>b77</kuenstlerID>
+		<kundenNr>b16</kundenNr>
+	</bewertung>
+	<bewertung bewertungID="b9">
+		<bewertung>Seine Titel haben keine tiefgründigkeit. Der Typ beschwert sich nur über diesen anscheinend unsterblichen Jungen, den er killen will. Ich glaub im ersnt, der Typ braucht nen Psychater.</bewertung>
+		<datum>2016-04-10</datum>
+		<kuenstlerID>a77</kuenstlerID>
+		<kundenNr>b16</kundenNr>
+	</bewertung>
+	<bewertung bewertungID="c9">
+		<bewertung>DrDrDrop the soap ist eine interessante Interpretation des postmodernen Trap, mit anlehnung an die frühen neunziger. Es ist ein muss für jeden EDM-Fan.LOOOOOOOOOOOOOOOOOOOOOOOOL </bewertung>
+		<datum>2016-04-11</datum>
+		<titelID>c222</titelID>
+		<kundenNr>b16</kundenNr>
+	</bewertung>
+	<einkauf>
+		<titelId>a77</titelId>
+		<titelId>b77</titelId>
+		<zahlung>true</zahlung>
+		<kunde kundenNr="a16">
+			<vorname>Peter</vorname>
+			<nachname>Pan</nachname>
+			<straße>Nimmerlandsweg</straße>
+			<hausNr>1</hausNr>
+			<ort>Nimmerland</ort>
+			<plz>256487</plz>
+			<email>Peter@pan.de</email>
+		</kunde>
+	</einkauf>
+	<einkauf>
+		<titelId>b77</titelId>
+		<zahlung>true</zahlung>
+		<kundenNr>b16</kundenNr>
+	</einkauf>
+	<einkauf>
+		<titelId>c77</titelId>
+		<zahlung>false</zahlung>
+		<kundenNr>c16</kundenNr>
+	</einkauf>
+</Musikstore>
