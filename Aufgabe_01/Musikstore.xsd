@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:complexType name="Musikstore">
-		<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="kunde" type="kundeType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="kuenstler" type="kuenstlerType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="titel" type="titelType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="einkauf" type="einkaufType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="playlist" type="playlistType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="titel_in_playlist" type="titel_in_playlistType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="album" type="albumType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="album_hat_titel" type="album_hat_titelType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="bewertung" type="bewertungType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="genre" type="genreType"/>
-			<xs:element minOccurs="0" maxOccurs="unbound" name="titel_hat_genre" type="titel_hat_genreType"/>
-		</xs:sequence>
+	<xs:element name="Musikstore" type="MusikstoreType"/>
+	<xs:complexType name="MusikstoreType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="kunde" type="kundeType"/>
+			<xs:element name="kuenstler" type="kuenstlerType"/>
+			<xs:element name="titel" type="titelType"/>
+			<xs:element name="einkauf" type="einkaufType"/>
+			<xs:element name="playlist" type="playlistType"/>
+			<xs:element name="titel_in_playlist" type="titel_in_playlistType"/>
+			<xs:element name="album" type="albumType"/>
+			<xs:element name="album_hat_titel" type="album_hat_titelType"/>
+			<xs:element name="bewertung" type="bewertungType"/>
+			<xs:element name="titel_hat_genre" type="titel_hat_genreType"/>
+			<xs:element name="genre" type="genreType"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="kundeType">
 		<xs:sequence>
