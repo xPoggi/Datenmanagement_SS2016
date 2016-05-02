@@ -163,20 +163,28 @@
 	<einkauf>
 		<titelId>a77</titelId>
 		<titelId>b77</titelId>
-		<zahlung>true</zahlung>
-
+		<zahlung>Paypal</zahlung>
+		<kunde kundenNr="a16">
+			<vorname>Peter</vorname>
+			<nachname>Pan</nachname>
+			<straße>Nimmerlandsweg</straße>
+			<hausNr>1</hausNr>
+			<ort>Nimmerland</ort>
+			<plz>256487</plz>
+			<email>Peter@pan.de</email>
+		</kunde>
 	</einkauf>
 	<einkauf>
 		<titelId>b77</titelId>
-		<titelId>d77</titelId>
-		<zahlung>true</zahlung>
+		<zahlung>Lastschrift</zahlung>
 		<kundenNr>b16</kundenNr>
 	</einkauf>
 	<einkauf>
 		<titelId>c77</titelId>
-		<zahlung>false</zahlung>
+		<zahlung>Sofortüberweisung</zahlung>
 		<kundenNr>c16</kundenNr>
 	</einkauf>
+
 	
 
 </Musikstore>
