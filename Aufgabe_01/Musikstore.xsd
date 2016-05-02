@@ -62,7 +62,7 @@
 	</xs:complexType>
 	<xs:complexType name="album_hat_titelType">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="titelID" type="xs:IDREF"/>
+			<xs:element name="titelID" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="albumID" type="xs:IDREF"/>
 	</xs:complexType>
@@ -85,22 +85,30 @@
 	</xs:complexType>
 	<xs:complexType name="titel_in_playlistType">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="titelID" type="xs:IDREF"/>
+			<xs:element name="titelID" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="playlistNr" type="xs:IDREF"/>
 	</xs:complexType>
 	<xs:complexType name="playlistType">
 		<xs:sequence>
-			<xs:element maxOccurs="1" minOccurs="0" name="kommentar" type="xs:string"/>
+			<xs:element name="kommentar" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="kundenNr" type="xs:IDREF"/>
 		</xs:sequence>
 		<xs:attribute name="playlistNr" type="xs:ID"/>
 	</xs:complexType>
 	<xs:complexType name="einkaufType">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="titelId" type="xs:IDREF"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="albumId" type="xs:IDREF"/>
-			<xs:element name="zahlung" type="xs:boolean"/>
+			<xs:element name="titelId" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="albumId" type="xs:IDREF" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="zahlung">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+				  <xs:enumeration value="Paypal"/>
+				  <xs:enumeration value="Lastschrift"/>
+				  <xs:enumeration value="Sofortüberweisung"/>
+				</xs:restriction>
+			</xs:simpleType>
+			</xs:element>
 			<xs:choice>
 				<xs:element name="kundenNr" type="xs:IDREF"/>
 				<xs:element name="kunde" type="kundeType"/>
