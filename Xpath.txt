@@ -1,0 +1,6 @@
++//kunde[starts-with(nachname, 'D')]/ort[text()]
++//titel[kuenstlerID = (//kuenstler[name="Helene Fischer"]/@kuenstlerID)]/@titel
++//titel_in_playlist[titelID=//titel[kuenstlerID = (//kuenstler[name="Helene Fischer"]/@kuenstlerID)]/@titelID]
++//playlist[@playlistNr=(//titel_in_playlist[titelID=//titel[kuenstlerID = (//kuenstler[name="Helene Fischer"]/@kuenstlerID)]/@titelID])/@playlistNr]
++//kunde[not(contains(substring(email, "@"), "."))]
++count(//titel_hat_genre[@titelID=(//einkauf[zahlung = "Paypal"]/titelId)] and @genre="Metalcore")
