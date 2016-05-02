@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Musikstore xsi:noNamespaceSchemaLocation="./Musikstore.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<kunde kundenNr="a16">
+		<vorname>Gustaf</vorname>
+		<nachname>Ganz</nachname>
+		<straße>Gänsestraße</straße>
+		<hausNr>6</hausNr>
+		<ort>Wacken</ort>
+		<plz>666666</plz>
+		<email>wlqejgfzaweg</email>
+	</kunde>
 	<kunde kundenNr="b16">
 		<vorname>Wendy</vorname>
 		<nachname>Darling</nachname>
@@ -28,6 +37,13 @@
 		<biographie>Das Krokodil ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Captain Hook.</biographie>
 		<herkunft>Neverland</herkunft>
 	</kuenstler>
+	<kuenstler kuenstlerID="d222">
+		<name>Helene Fischer</name>
+		<biographie>
+			Helene Fischer ist eine erfolgreiche Schlagersängerin
+		</biographie>
+		<herkunft>Deutschland</herkunft>
+	</kuenstler>
 	<kuenstler kuenstlerID="a222">
 		<name>Captain Hook</name>
 		<biographie>Captain Hook ist eine fiktive Figur aus Peter Pan, dem Bühnenstück und Buch von James M. Barrie. Er ist der Gegenspieler von Peter Pan.</biographie>
@@ -39,6 +55,13 @@
 		<pfad>/mnt/Mr_Smee/c77_DrDrDrop_the_soap.mp3</pfad>
 		<laenge>240</laenge>
 		<kuenstlerID>c222</kuenstlerID>
+	</titel>
+	<titel titelID="d77">
+		<name>Babyno</name>
+		<preis>2.22</preis>
+		<pfad>/mnt/Helene/d77_Babyno.mp3</pfad>
+		<laenge>500</laenge>
+		<kuenstlerID>d222</kuenstlerID>
 	</titel>
 	<titel titelID="b77">
 		<name>Piraten sind lecker</name>
@@ -54,11 +77,13 @@
 		<laenge>185</laenge>
 		<kuenstlerID>a222</kuenstlerID>
 	</titel>
-	<titel_hat_genre genre="Metalcore" titelID="a222"></titel_hat_genre>
-	<titel_hat_genre genre="Classic" titelID="b222"></titel_hat_genre>
-	<titel_hat_genre genre="Trap" titelID="c222"></titel_hat_genre>
+	<titel_hat_genre genre="Metalcore" titelID="a77"></titel_hat_genre>
+	<titel_hat_genre genre="Metalcore" titelID="b77"></titel_hat_genre>
+	<titel_hat_genre genre="Trap" titelID="c77"></titel_hat_genre>
+	<titel_hat_genre genre="Rock" titelID="d77" ></titel_hat_genre>
 	<genre genre="Trap"></genre>
 	<genre genre="Classic"></genre>
+	<genre genre="Rock" ></genre>
 	<genre genre="Metalcore"></genre>
 	<album albumID="a8">
 		<name>Tinker Bell EP</name>
@@ -104,17 +129,18 @@
 		<kundenNr>a16</kundenNr>
 	</playlist>
 	<titel_in_playlist playlistNr="a2">
-		<titelID>a222</titelID>
-		<titelID>b222</titelID>
-		<titelID>c222</titelID>
+		<titelID>a77</titelID>
+		<titelID>b77</titelID>
+		<titelID>c77</titelID>
 	</titel_in_playlist>
 	<titel_in_playlist playlistNr="b2">
-		<titelID>a222</titelID>
-		<titelID>c222</titelID>
+		<titelID>a77</titelID>
+		<titelID>c77</titelID>
 	</titel_in_playlist>
 	<titel_in_playlist playlistNr="c2">
-		<titelID>a222</titelID>
-		<titelID>b222</titelID>
+		<titelID>a77</titelID>
+		<titelID>b77</titelID>
+		<titelID>d77</titelID>
 	</titel_in_playlist>
 	<bewertung bewertungID="a9">
 		<bewertung>Man hört nichts. Im ernst, wer hielt es für eine gute Idee ein Krokodil singen zu lassen!</bewertung>
@@ -138,18 +164,11 @@
 		<titelId>a77</titelId>
 		<titelId>b77</titelId>
 		<zahlung>true</zahlung>
-		<kunde kundenNr="a16">
-			<vorname>Peter</vorname>
-			<nachname>Pan</nachname>
-			<straße>Nimmerlandsweg</straße>
-			<hausNr>1</hausNr>
-			<ort>Nimmerland</ort>
-			<plz>256487</plz>
-			<email>Peter@pan.de</email>
-		</kunde>
+
 	</einkauf>
 	<einkauf>
 		<titelId>b77</titelId>
+		<titelId>d77</titelId>
 		<zahlung>true</zahlung>
 		<kundenNr>b16</kundenNr>
 	</einkauf>
@@ -158,4 +177,6 @@
 		<zahlung>false</zahlung>
 		<kundenNr>c16</kundenNr>
 	</einkauf>
+	
+
 </Musikstore>
