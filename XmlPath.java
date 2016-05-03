@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,7 +38,7 @@ public class XmlPath {
 			List<String> resultSet = new LinkedList<>();
 			for (String s : xPathExpressions) {
 				if(!s.equals("")){
-					System.out.println(s + " => ");
+					//System.out.println(s + " => ");
 					
 					NodeList nodes = (NodeList) xpath.evaluate(s, xpathbefehle, XPathConstants.NODESET);
 	
@@ -87,9 +88,16 @@ public class XmlPath {
 			
 			List<String> resultXML = evalXPath(list, xmlfile, xpath);
 			
-			//TODO sanitize result
-			resultXML.forEach(result -> System.out.println(result));
-			
+			for(String res : resultXML){
+
+				System.out.println(res);				
+				Matcher m = Pattern.compile("titelID=\"([a-z][0-9]+)\"").matcher(res);
+				String titelid;
+				if (m.find()) {
+					titelid = (m.group(0).split("\"")[1]);
+					System.out.println(get_Artistname(titelid));
+				}
+			}			
 			
 		} else if (name.length()  > 0) {
 			
@@ -103,10 +111,16 @@ public class XmlPath {
 			
 			List<String> resultXML = evalXPath(list, xmlfile, xpath);
 			
-			//TODO sanitize result
-			resultXML.forEach(result -> System.out.println(result));
+			for(String res : resultXML){
 
-			
+				System.out.println(res);				
+				Matcher m = Pattern.compile("titelID=\"([a-z][0-9]+)\"").matcher(res);
+				String titelid;
+				if (m.find()) {
+					titelid = (m.group(0).split("\"")[1]);
+					System.out.println(get_Artistname(titelid));
+				}
+			}			
 		} else if (genre.length() > 0) {
 			
 			String expr = "//titel[@titelID=(//titel_hat_genre[@genre=\"" + genre + "\"]/@titelID)]";
@@ -119,25 +133,16 @@ public class XmlPath {
 			
 			List<String> resultXML = evalXPath(list, xmlfile, xpath);
 			
-			System.out.println(resultXML.size());
-			
-			//TODO sanitize result
-			//TODO get kuenstler
-			
-			resultXML.forEach(result -> System.out.println(result));
-			
-			String res = resultXML.get(0);
-			
-			Matcher m = Pattern.compile("titelID=\"([a-z][0-9]+)\"").matcher(res);
-			if (m.matches()) {
-				System.out.println(m.group(1));
-			}
+			for(String res : resultXML){
 
-			
-			//			res.split()
-			
-			
-			
+				System.out.println(res);				
+				Matcher m = Pattern.compile("titelID=\"([a-z][0-9]+)\"").matcher(res);
+				String titelid;
+				if (m.find()) {
+					titelid = (m.group(0).split("\"")[1]);
+					System.out.println(get_Artistname(titelid));
+				}
+			}			
 		}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -145,17 +150,32 @@ public class XmlPath {
 		
 	}
 	
+	static String get_Artistname(String ID){
+		try {
+		String expr = "//kuenstler[@kuenstlerID = (//titel[@titelID = \"" + ID + "\"]/kuenstlerID)]/name";
+		
+		List<String> list = new LinkedList<>();
+		
+		list.add(expr);
+
+		Document xmlfile;
+		
+			xmlfile = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlFile);
+			
+		XPath xpath = XPathFactory.newInstance().newXPath();
+		
+		List<String> resultXML = evalXPath(list, xmlfile, xpath);
+		
+		return resultXML.get(0);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public static void main(String[] args) throws IOException, XPathExpressionException, ParserConfigurationException,
 			SAXException, TransformerFactoryConfigurationError, TransformerException {
-		
-//		List<String> xPathExpressions = Files.readAllLines(Paths.get(xmlpathFile));
-//
-//		Document xpathbefehle = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlFile);
-//		XPath xpath = XPathFactory.newInstance().newXPath();
-//		
-//		evalXPath(xPathExpressions, xpathbefehle, xpath);
-
-		getUserQuery();
-		
+		getUserQuery();		
 	}
 }
